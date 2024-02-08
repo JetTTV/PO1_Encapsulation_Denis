@@ -5,6 +5,11 @@ namespace PO1_Encapsulation
         public Form1()
         {
             InitializeComponent();
+            Personnage joueur = new Personnage();
+            joueur.Pv = 10;
+            MessageBox.Show(joueur.Pv.ToString());
+            DateTime rightNow = DateTime.Now;
+            rightNow
         }
 
         private void btn_attaquer_Click(object sender, EventArgs e)
