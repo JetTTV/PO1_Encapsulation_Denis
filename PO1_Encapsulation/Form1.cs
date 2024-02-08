@@ -25,17 +25,28 @@ namespace PO1_Encapsulation
         }
         private void btn_attaquer_Click(object sender, EventArgs e)
         {
-
+            dragon.Pv -= joueur.Strength;
+            TourDragon();
+            ActualiserLabel();
         }
 
         private void btn_seSoigner_Click(object sender, EventArgs e)
         {
-
-        }
+            joueur.Pv += 5;
+            TourDragon();
+            ActualiserLabel();
+            joueur.Pv = Math.Clamp(joueur.Pv, 0, 10);
 
         private void btn_puissanceAttaque_Click(object sender, EventArgs e)
         {
+            joueur.Strength += 1;
+            TourDragon();
+            ActualiserLabel();
+        }
 
+        private void TourDragon()
+        {
+            joueur.Pv -= dragon.Strength;
         }
     }
 }
